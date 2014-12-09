@@ -1,5 +1,28 @@
+body {
+	background: $dark-blue;
+	color: $grey;
+}
+div.bg {
+	height: 600px;
+	position: absolute;
+	top:0px;
+	width: 100%;
+	background-size: cover;
+}
 // Content wrapper
-.wrap { }
+.wrap {
+	&.container {
+		background: $transparent-white;
+		margin-top: 10em;
+		border-radius: $border-radius;
+	}
+}
+.row {
+	&.lighter { background: $transparent-white; }
+	&.white { background: $offwhite; }
+	&.darker { background: $transparent-black; }
+	&.grey { background: $grey; }
+}
 
 // Main content area
 .main {

@@ -1,14 +1,14 @@
 {
-  "name": "roots",
+  "name": "sss",
   "version": "7.0.1",
-  "author": "Ben Word <ben@benword.com>",
-  "homepage": "http://roots.io",
+  "author": "tracy apps <t@tapps.email",
+  "homepage": "http://selectspineandsport.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/roots/roots.git"
+    "url": "git://github.com/tracyapps/sss.git"
   },
   "bugs": {
-    "url": "https://github.com/roots/roots/issues"
+    "url": "https://github.com/tracyapps/sss/issues"
   },
   "licenses": [
     {
