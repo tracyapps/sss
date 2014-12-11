@@ -6916,7 +6916,7 @@ div.bg {
 }
 
 .the-page-header {
-  background: rgba(255, 255, 255, 0.4);
+  padding-top: 1em;
 }
 
 .sidebar {
