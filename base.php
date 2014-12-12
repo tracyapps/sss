@@ -11,7 +11,7 @@
 	do_action( 'get_header' );
 	get_template_part( 'templates/header' );
 	?>
-	<div class="parallax-window bg" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-01.jpg"></div>
+	<div class="parallax-window bg" data-parallax="scroll" data-speed="0.3" data-position="top center" data-image-src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-01.jpg"></div>
 	<div class="wrap container" role="document">
 		<header class="banner navbar navbar-inverse navbar-static-top row" role="banner">
 			<div class="container">

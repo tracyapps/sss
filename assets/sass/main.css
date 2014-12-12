@@ -5402,9 +5402,10 @@ body {
   background: #091421;
   color: #3b3b3b; }
 
-div.bg {
-  height: 600px;
+div.bg.parallax-window {
+  min-height: 950px;
   position: absolute;
+  z-index: -1;
   top: 0px;
   width: 100%;
   background-size: cover; }
@@ -5413,15 +5414,21 @@ div.bg {
   background: rgba(255, 255, 255, 0.4);
   margin-top: 10em;
   border-radius: 5px; }
+  .wrap.container .navbar {
+    margin-bottom: 0px; }
 
 .row.lighter {
   background: rgba(255, 255, 255, 0.4); }
 .row.white {
   background: #fbfaf6; }
 .row.darker {
-  background: rgba(0, 0, 0, 0.5); }
+  background: rgba(0, 0, 0, 0.5);
+  color: #fbfaf6; }
 .row.grey {
-  background: #3b3b3b; }
+  background: #3b3b3b;
+  color: #fbfaf6; }
+.row.content-container {
+  padding: 15px 30px; }
 
 .main {
   position: relative;
@@ -5454,5 +5461,11 @@ div.bg {
     .sidebar {
       float: left;
       width: 33.33333%; } }
+
+.carousel {
+  margin-right: -16px; }
+  .carousel .item img {
+    width: 100%;
+    height: 250px; }
 
 /*# sourceMappingURL=main.css.map */

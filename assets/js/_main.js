@@ -60,4 +60,6 @@ var UTIL = {
 
 $(document).ready(UTIL.loadEvents);
 
+$('div.carousel-inner div.item:first-child').addClass('active');
+
 })(jQuery); // Fully reference jQuery after this point.

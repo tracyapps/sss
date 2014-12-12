@@ -40,11 +40,12 @@ if ( !class_exists( 'FM_SSS_Context_Submenu' ) ) :
 				'limit'          => 1,
 				'label'          => 'Global site information',
 				'children'       => array(
-					'tagline'         => new Fieldmanager_Textfield( 'Tagline' ),
-					'phone'         => new Fieldmanager_Textfield( 'Phone number' ),
-					'facebook'         => new Fieldmanager_Textfield( 'Facebook page link' ),
-					'twitter'         => new Fieldmanager_Textfield( 'Twitter account name' ),
-					'address'     => new Fieldmanager_TextArea( 'Address' ),
+					'tagline'         	=> new Fieldmanager_Textfield( 'Tagline' ),
+					'additional-intro'	=> new Fieldmanager_TextArea( 'Additional intro text' ),
+					'phone'				=> new Fieldmanager_Textfield( 'Phone number' ),
+					'facebook'			=> new Fieldmanager_Textfield( 'Facebook page link' ),
+					'twitter'			=> new Fieldmanager_Textfield( 'Twitter account name' ),
+					'address'			=> new Fieldmanager_TextArea( 'Address' ),
 					)
 				)
 			);
@@ -137,3 +138,9 @@ function fix_meta_box_formatting() {
     	.fm-service_icon-wrapper {overflow: hidden; float: none; display: block; padding: 5px 0px;}
 	</style>';
 }
+
+/**
+ * adding a slideshow image size, cropped
+ */
+
+add_image_size( 'homepage-slide', 600, 250, true ); // (cropped)

@@ -2,9 +2,10 @@ body {
 	background: $dark-blue;
 	color: $grey;
 }
-div.bg {
-	height: 600px;
+div.bg.parallax-window  {
+	min-height: 950px;
 	position: absolute;
+	z-index: -1;
 	top:0px;
 	width: 100%;
 	background-size: cover;
@@ -15,13 +16,18 @@ div.bg {
 		background: $transparent-white;
 		margin-top: 10em;
 		border-radius: $border-radius;
+
+		.navbar {
+			margin-bottom: 0px;
+		}
 	}
 }
 .row {
 	&.lighter { background: $transparent-white; }
 	&.white { background: $offwhite; }
-	&.darker { background: $transparent-black; }
-	&.grey { background: $grey; }
+	&.darker { background: $transparent-black; color: $offwhite; }
+	&.grey { background: $grey; color: $offwhite; }
+	&.content-container { padding: 15px 30px;}
 }
 
 // Main content area
