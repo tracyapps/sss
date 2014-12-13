@@ -1,6 +1,8 @@
 body {
 	background: $dark-blue;
 	color: $grey;
+	font-family: "Raleway", sans-serif;
+	font-size: 15px;
 }
 div.bg.parallax-window  {
 	min-height: 950px;
@@ -9,6 +11,7 @@ div.bg.parallax-window  {
 	top:0px;
 	width: 100%;
 	background-size: cover;
+	@include background-image( linear-gradient( top, rgba(9,20,33,0 ) 0%,rgba( 9,20,33,0 ) 75%,rgba( 9,20,33,1 ) 100%) );
 }
 // Content wrapper
 .wrap {
@@ -25,7 +28,7 @@ div.bg.parallax-window  {
 .row {
 	&.lighter { background: $transparent-white; }
 	&.white { background: $offwhite; }
-	&.darker { background: $transparent-black; color: $offwhite; }
+	&.darker { background: $transparent-black; color: $offwhite;}
 	&.grey { background: $grey; color: $offwhite; }
 	&.content-container { padding: 15px 30px;}
 }
@@ -36,4 +39,26 @@ div.bg.parallax-window  {
   .sidebar-primary & {
     @include make-sm-column($main-sm-columns - $sidebar-sm-columns);
   }
+}
+
+/* -------------------------------- typography -- */
+strong, b, h2, h3, h4, h5, h6 {
+	font-weight: 900;
+}
+h1 {font-size: 2.3em; margin: 0 0 12px 0; line-height: 1em;}
+h2 {font-size: 2.0em;}
+h3 {font-size: 1.8em;}
+h4 {font-size: 1.6em;}
+h5 {font-size: 1.4em;}
+h6 {font-size: 1.2em;}
+
+
+/* -------------------------------- icons, svg, etc -- */
+.icon {
+	background-size: 65% auto;
+	background-position: center center;
+	background-color: #fff;
+	border-radius: 100%;
+	-webkit-box-shadow: inset 2px 1px 2px 0 rgba( 30, 30, 30, 0.5 );
+	box-shadow: inset 2px 1px 2px 0 rgba( 30, 30, 30, 0.5 );
 }

@@ -2674,7 +2674,8 @@ var Roots = {
   // All pages
   common: {
     init: function() {
-      // JavaScript to be fired on all pages
+    	// JavaScript to be fired on all pages
+
     }
   },
   // Home page
@@ -2712,6 +2713,18 @@ var UTIL = {
 
 $(document).ready(UTIL.loadEvents);
 
-$('div.carousel-inner div.item:first-child').addClass('active');
+
+// add "active" class to the first slide so the carousel will show up :)
+$( 'div.carousel-inner div.item:first-child' ).addClass( 'active' );
+
+// sticky nav and resizing logo
+	$( window ).scroll( function() {
+		if ( $( this ).scrollTop() > 230 ){
+			$( 'header.navbar' ).addClass( "navbar-fixed-top" );
+		}
+		else {
+			$( 'header.navbar' ).removeClass( "navbar-fixed-top" );
+		}
+	});
 
 })(jQuery); // Fully reference jQuery after this point.

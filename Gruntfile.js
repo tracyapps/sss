@@ -168,6 +168,11 @@ module.exports = function(grunt) {
 				dest: "assets/img/icons"
 			}],
 			options: {
+				colors: {
+					white: "#fbfaf6",
+					grey: "#3b3b3b",
+					blue: "#007bb1"
+				}
 			}
 		}
 	}

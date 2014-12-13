@@ -93,7 +93,10 @@ if ( class_exists( 'Fieldmanager_Field' ) ) :
 				$fm->add_meta_box( 'Homepage slideshow', 'page' );
 
 				$the_icon_path = get_template_directory() . '/assets/img/icons/png/';
-				$the_icon_array = glob( $the_icon_path . '*.png', GLOB_BRACE );
+				$the_icon_array = array_diff( scandir( $the_icon_path ), array( '..', '.' ) );
+				$the_icon_array = array_map( function( $e ) {
+					return pathinfo( $e, PATHINFO_FILENAME );
+				}, $the_icon_array );
 
 				$fm = new Fieldmanager_group( array(
 						'name'				=> 'homepage_service_box',
@@ -106,11 +109,8 @@ if ( class_exists( 'Fieldmanager_Field' ) ) :
 						'children'			=> array(
 							'service_title' => new Fieldmanager_Textfield( 'Service title' ),
 							'service_icon'	=> new Fieldmanager_Radios( false, array(
-										'label'				=> 'Select an icon',
 										'options_template'	=> get_template_directory() . '/lib/icon_template.php',
-										'options'			=> array(
-											'datasource'		=> $the_icon_array
-										)
+										'options'			=> $the_icon_array,
 									)
 								),
 							'service_description'	=> new Fieldmanager_RichTextArea( 'Service description' ),

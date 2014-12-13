@@ -1,17 +1,18 @@
 <div class="row home-intro lighter">
-	<div class="col-xs-6">
+	<div class="col-xs-6 intro-text">
 		<?php $site_global_content = get_option( 'option_fields' );
 
-		echo '<h1>' . esc_html( get_bloginfo( 'name' ) ) . '</h1>';
 		if ( $site_global_content[ 'tagline' ] != '' ) {
-			echo '<h3>' . esc_html( $site_global_content[ 'tagline' ] ) . '</h3>';
+			echo '<h1>' . esc_html( $site_global_content[ 'tagline' ] ) . '</h1>';
+		} else {
+			echo '<h1>' . esc_html( get_bloginfo( 'name' ) ) . '</h1>';
 		}
 		if ( $site_global_content[ 'additional-intro' ] != '' ) {
 			echo '<p>' . esc_html( $site_global_content[ 'additional-intro' ] ) . '</p>';
 		}
 		?>
 	</div>
-	<div class="col-xs-6">
+	<div class="col-xs-6 intro-slides">
 
 		<div id="carousel" class="carousel slide" data-ride="carousel">
 
@@ -50,11 +51,22 @@
 		<h2>Services</h2>
 		<section class="services-container">
 			<?php $service_boxes = get_post_meta( get_the_ID(), 'homepage_service_box', true );
-			//print_r($homepage_services);
-			foreach ( $service_boxes as $service_box ) :
+			$the_icon_path = get_template_directory() . '/assets/img/icons/png/';
+			$the_icon_array = array_diff( scandir( $the_icon_path ), array( '..', '.' ) );
+			$the_icon_array = array_map( function( $e ) {
+				return pathinfo( $e, PATHINFO_FILENAME );
+			}, $the_icon_array );
 
-				echo '<div class="service">' . esc_html( $service_box[ 'service_icon' ] ) . '<h5>' . esc_html( $service_box[ 'service_title' ] ) . '</h5><p>' . wp_kses_post( $service_box[ 'service_description' ] ) . '</p></div>';
+			foreach ( $service_boxes as $service_box ) :
+				$icon_id = esc_html( $service_box[ 'service_icon' ] );
+
+				echo '<div class="service"><div class="icon-' . $the_icon_array[$icon_id] . ' icon" style="width: 140px; height: 140px; margin: 10px auto;"></div><h5>' . esc_html( $service_box[ 'service_title' ] ) . '</h5><p>' . wp_kses_post( $service_box[ 'service_description' ] ) . '</p></div>';
 			endforeach;  ?>
 		</section>
+	</div>
+</div>
+<div class="row white content-container">
+	<div class="col-xs-12">
+
 	</div>
 </div>

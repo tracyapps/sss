@@ -37,7 +37,11 @@ function roots_scripts() {
 		);
 	}
 
-  wp_enqueue_style('roots_css', get_template_directory_uri() . $assets['css'], false, null);
+	wp_enqueue_style('roots_css', get_template_directory_uri() . $assets['css'], false, null);
+	wp_enqueue_style('icons_fallback', get_template_directory_uri() . '/assets/img/icons/icons.fallback.css', false, null);
+	wp_enqueue_style('icons_png', get_template_directory_uri() . '/assets/img/icons/icons.data.png.css', false, null);
+	wp_enqueue_style('icons_svg', get_template_directory_uri() . '/assets/img/icons/icons.data.svg.css', false, null);
+
 
   /**
    * jQuery is loaded using the same method from HTML5 Boilerplate:

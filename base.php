@@ -13,7 +13,7 @@
 	?>
 	<div class="parallax-window bg" data-parallax="scroll" data-speed="0.3" data-position="top center" data-image-src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-01.jpg"></div>
 	<div class="wrap container" role="document">
-		<header class="banner navbar navbar-inverse navbar-static-top row" role="banner">
+		<header class="banner navbar navbar-inverse row" role="banner">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
