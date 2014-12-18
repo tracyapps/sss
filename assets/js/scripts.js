@@ -2290,7 +2290,129 @@
   })
 
 }(jQuery);
-;/*!
+;/*
+	By Osvaldas Valutis, www.osvaldas.info
+	Available for use under the MIT License
+*/
+
+window.googleMapsScriptLoaded = function()
+{
+	$( window ).trigger( 'googleMapsScriptLoaded' );
+};
+
+;( function( $, window, document, undefined )
+{
+	'use strict';
+
+	var $window			= $( window ),
+		$body			= $( 'body' ),
+		windowHeight	= $window.height(),
+		windowScrollTop	= 0,
+
+		debounce = function( delay, fn )
+		{
+			var timer = null;
+			return function()
+			{
+				var context = this, args = arguments;
+				clearTimeout( timer );
+				timer = setTimeout( function(){ fn.apply( context, args ); }, delay );
+			};
+		},
+		throttle = function( delay, fn )
+		{
+			var last, deferTimer;
+			return function()
+			{
+				var context = this, args = arguments, now = +new Date;
+				if( last && now < last + delay )
+				{
+					clearTimeout( deferTimer );
+					deferTimer = setTimeout( function(){ last = now; fn.apply( context, args ); }, delay );
+				}
+				else
+				{
+					last = now;
+					fn.apply( context, args );
+				}
+			};
+		},
+
+		apiScriptLoaded	 = false,
+		apiScriptLoading = false,
+		$containers		 = $([]),
+
+		init = function( callback )
+		{
+			windowScrollTop = $window.scrollTop();
+
+			$containers.each( function()
+			{
+				var $this		= $( this ),
+					thisOptions = $this.data( 'options' );
+
+				if( $this.offset().top - windowScrollTop > windowHeight * 1 )
+					return true;
+
+				if( !apiScriptLoaded && !apiScriptLoading )
+				{
+					$body.append( '<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&callback=googleMapsScriptLoaded' + ( thisOptions.api_key ? ( '&key=' + thisOptions.api_key ) : '' ) + '"></script>' );
+					apiScriptLoading = true;
+				}
+
+				if( !apiScriptLoaded ) return true;
+
+				var map = new google.maps.Map( this, { zoom: 15 });
+				if( thisOptions.callback !== false )
+					thisOptions.callback( this, map );
+
+				$containers = $containers.not( $this );
+			});
+		};
+
+	$window
+	.on( 'googleMapsScriptLoaded',function()
+	{
+		apiScriptLoaded = true;
+		init();
+	})
+	.on( 'scroll', throttle( 500, init ) )
+	.on( 'resize', debounce( 1000, function()
+	{
+		windowHeight = $window.height();
+		init();
+	}));
+
+	$.fn.lazyLoadGoogleMaps = function( options )
+	{
+		options = $.extend(
+					{
+						api_key:  false,
+						callback: false,
+					},
+					options );
+
+		this.each( function()
+		{
+			var $this = $( this );
+			$this.data( 'options', options );
+			$containers = $containers.add( $this );
+		});
+
+		init();
+
+		this.debounce = debounce;
+		this.throttle = throttle;
+
+		return this;
+	};
+
+})( jQuery, window, document );;/*
+	By Osvaldas Valutis, www.osvaldas.info
+	Available for use under the MIT License
+*/
+
+;window.googleMapsScriptLoaded=function(){$(window).trigger("googleMapsScriptLoaded")};(function(e,t,n,r){"use strict";var i=e(t),s=e("body"),o=i.height(),u=0,a=function(e,t){var n=null;return function(){var r=this,i=arguments;clearTimeout(n);n=setTimeout(function(){t.apply(r,i)},e)}},f=function(e,t){var n,r;return function(){var i=this,s=arguments,o=+(new Date);if(n&&o<n+e){clearTimeout(r);r=setTimeout(function(){n=o;t.apply(i,s)},e)}else{n=o;t.apply(i,s)}}},l=false,c=false,h=e([]),p=function(t){u=i.scrollTop();h.each(function(){var t=e(this),n=t.data("options");if(t.offset().top-u>o*1)return true;if(!l&&!c){s.append('<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&callback=googleMapsScriptLoaded'+(n.api_key?"&key="+n.api_key:"")+'"></script>');c=true}if(!l)return true;var r=new google.maps.Map(this,{zoom:15});if(n.callback!==false)n.callback(this,r);h=h.not(t)})};i.on("googleMapsScriptLoaded",function(){l=true;p()}).on("scroll",f(500,p)).on("resize",a(1e3,function(){o=i.height();p()}));e.fn.lazyLoadGoogleMaps=function(t){t=e.extend({api_key:false,callback:false},t);this.each(function(){var n=e(this);n.data("options",t);h=h.add(n)});p();this.debounce=a;this.throttle=f;return this}})(jQuery,window,document);;/*!
  * parallax.js v1.2.1 (http://pixelcog.github.io/parallax.js/)
  * Copyright (c) 2014 PixelCog, Inc.
  * Licensed under MIT (https://github.com/pixelcog/parallax.js/blob/master/LICENSE)
@@ -2671,59 +2793,73 @@
 // Use this variable to set up the common and page specific functions. If you 
 // rename this variable, you will also need to rename the namespace below.
 var Roots = {
-  // All pages
-  common: {
-    init: function() {
-    	// JavaScript to be fired on all pages
+	// All pages
+	common: {
+		init: function() {
+			// JavaScript to be fired on all pages
 
-    }
-  },
-  // Home page
-  home: {
-    init: function() {
-      // JavaScript to be fired on the home page
-    }
-  },
-  // About us page, note the change from about-us to about_us.
-  about_us: {
-    init: function() {
-      // JavaScript to be fired on the about us page
-    }
-  }
+		}
+	},
+	// Home page
+	home: {
+		init: function() {
+			// JavaScript to be fired on the home page
+
+			// add "active" class to the first slide so the carousel will show up :)
+			$( 'div.carousel-inner div.item:first-child' ).addClass( 'active' );
+		}
+	},
+	// About us page, note the change from about-us to about_us.
+		about_us: {
+		init: function() {
+			// JavaScript to be fired on the about us page
+		}
+	}
 };
 
 // The routing fires all common scripts, followed by the page specific scripts.
 // Add additional events for more control over timing e.g. a finalize event
 var UTIL = {
-  fire: function(func, funcname, args) {
-    var namespace = Roots;
-    funcname = (funcname === undefined) ? 'init' : funcname;
-    if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
-      namespace[func][funcname](args);
-    }
-  },
-  loadEvents: function() {
-    UTIL.fire('common');
+	fire: function(func, funcname, args) {
+		var namespace = Roots;
+		funcname = (funcname === undefined) ? 'init' : funcname;
+		if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
+			namespace[func][funcname](args);
+		}
+	},
+	loadEvents: function() {
+		UTIL.fire('common');
 
-    $.each(document.body.className.replace(/-/g, '_').split(/\s+/),function(i,classnm) {
-      UTIL.fire(classnm);
-    });
-  }
+		$.each(document.body.className.replace(/-/g, '_').split(/\s+/),function(i,classnm) {
+			UTIL.fire(classnm);
+		});
+	}
 };
 
 $(document).ready(UTIL.loadEvents);
 
 
-// add "active" class to the first slide so the carousel will show up :)
-$( 'div.carousel-inner div.item:first-child' ).addClass( 'active' );
+
 
 // sticky nav and resizing logo
 	$( window ).scroll( function() {
-		if ( $( this ).scrollTop() > 230 ){
+		if ( $( this ).scrollTop() > 280 ){
 			$( 'header.navbar' ).addClass( "navbar-fixed-top" );
 		}
 		else {
 			$( 'header.navbar' ).removeClass( "navbar-fixed-top" );
+		}
+	});
+
+	// google maps lazy load
+	$( '.google-map' ).lazyLoadGoogleMaps( {
+		callback: function( container, map )
+		{
+			var $container  = $( container ),
+				center      = new google.maps.LatLng( $container.attr( 'data-lat' ), $container.attr( 'data-lng' ) );
+
+			map.setOptions({ zoom: 15, center: center });
+			new google.maps.Marker({ position: center, map: map });
 		}
 	});
 

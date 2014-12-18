@@ -1,3 +1,12 @@
 .sidebar {
-  @include make-sm-column($sidebar-sm-columns);
+	@include make-sm-column($sidebar-sm-columns);
+	margin-top: 2em;
+
+	.widget {
+		margin: 3em 0;
+		&.fblike {
+			background: $transparent-white;
+			margin-top: 4em;
+		}
+	}
 }

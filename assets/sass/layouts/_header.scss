@@ -18,4 +18,10 @@ header.navbar.navbar-inverse {
 			}
 		}
 	}
+	.navbar-phone {
+		text-align: center;
+		line-height: 1em;
+		.smaller {font-size:0.8em; display:block; clear:both;}
+		.phone-number {font-size:1.4em; display:block; clear:both;}
+	}
 }

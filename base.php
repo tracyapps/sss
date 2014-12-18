@@ -29,6 +29,10 @@
 					if (has_nav_menu('primary_navigation')) :
 						wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'));
 					endif;
+					$site_global_content = get_option( 'option_fields' );
+					if ( $site_global_content['phone'] != '' ) :
+						echo '<p class="navbar-text navbar-right navbar-phone"><span class="smaller">Book your appointment</span><span class="phone-number">' . esc_html( $site_global_content[ 'phone' ] ) . '</span></p>';
+					endif;
 					?>
 				</nav>
 			</div>
