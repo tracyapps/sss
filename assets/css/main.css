@@ -7044,6 +7044,15 @@ header.navbar.navbar-inverse .navbar-phone .phone-number {
   font-weight: normal;
 }
 
+.page header.page-header .featured-image {
+  display: block;
+  margin: -40px -20px 20px -20px;
+}
+.page header.page-header .featured-image img {
+  width: 100%;
+  height: auto;
+}
+
 .home-intro .intro-text {
   padding: 2em 25px;
   font-size: 1.3em;
@@ -7134,6 +7143,15 @@ header.navbar.navbar-inverse .navbar-phone .phone-number {
       -ms-flex: 1 0 0;
           flex: 1 0 0;
   padding: 10px 25px;
+}
+
+.hentry header .featured-image {
+  display: block;
+  margin: -8px -20px 20px -20px;
+}
+.hentry header .featured-image img {
+  width: 100%;
+  height: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

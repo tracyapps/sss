@@ -238,7 +238,7 @@ function fix_meta_box_formatting() {
  */
 
 add_image_size( 'homepage-slide', 600, 310, true ); // (cropped)
-
+add_image_size( 'page-featured-image', 650, 350, true ); // (cropped)
 
 /**
  * adding a shortcode to add an SVG icon

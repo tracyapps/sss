@@ -1,4 +1,8 @@
+.icon-address-book { background-image: url('png/address-book.png'); background-repeat: no-repeat; }
+
 .icon-ambulance-star { background-image: url('png/ambulance-star.png'); background-repeat: no-repeat; }
+
+.icon-apple { background-image: url('png/apple.png'); background-repeat: no-repeat; }
 
 .icon-arrows { background-image: url('png/arrows.png'); background-repeat: no-repeat; }
 
@@ -10,11 +14,15 @@
 
 .icon-barbell { background-image: url('png/barbell.png'); background-repeat: no-repeat; }
 
+.icon-blank-screen { background-image: url('png/blank-screen.png'); background-repeat: no-repeat; }
+
 .icon-books { background-image: url('png/books.png'); background-repeat: no-repeat; }
 
 .icon-brain { background-image: url('png/brain.png'); background-repeat: no-repeat; }
 
 .icon-calendar { background-image: url('png/calendar.png'); background-repeat: no-repeat; }
+
+.icon-camera-2 { background-image: url('png/camera-2.png'); background-repeat: no-repeat; }
 
 .icon-camera { background-image: url('png/camera.png'); background-repeat: no-repeat; }
 
@@ -27,6 +35,8 @@
 .icon-chat-bubbles { background-image: url('png/chat-bubbles.png'); background-repeat: no-repeat; }
 
 .icon-check { background-image: url('png/check.png'); background-repeat: no-repeat; }
+
+.icon-compass-inverse { background-image: url('png/compass-inverse.png'); background-repeat: no-repeat; }
 
 .icon-compass { background-image: url('png/compass.png'); background-repeat: no-repeat; }
 
@@ -52,6 +62,10 @@
 
 .icon-group { background-image: url('png/group.png'); background-repeat: no-repeat; }
 
+.icon-hand-2 { background-image: url('png/hand-2.png'); background-repeat: no-repeat; }
+
+.icon-hand { background-image: url('png/hand.png'); background-repeat: no-repeat; }
+
 .icon-handshake { background-image: url('png/handshake.png'); background-repeat: no-repeat; }
 
 .icon-heart-beat { background-image: url('png/heart-beat.png'); background-repeat: no-repeat; }
@@ -60,7 +74,11 @@
 
 .icon-home { background-image: url('png/home.png'); background-repeat: no-repeat; }
 
+.icon-id-card { background-image: url('png/id-card.png'); background-repeat: no-repeat; }
+
 .icon-instagram { background-image: url('png/instagram.png'); background-repeat: no-repeat; }
+
+.icon-map-inverse { background-image: url('png/map-inverse.png'); background-repeat: no-repeat; }
 
 .icon-map { background-image: url('png/map.png'); background-repeat: no-repeat; }
 
@@ -72,7 +90,11 @@
 
 .icon-molecules { background-image: url('png/molecules.png'); background-repeat: no-repeat; }
 
+.icon-paperclilp { background-image: url('png/paperclilp.png'); background-repeat: no-repeat; }
+
 .icon-phone { background-image: url('png/phone.png'); background-repeat: no-repeat; }
+
+.icon-piano { background-image: url('png/piano.png'); background-repeat: no-repeat; }
 
 .icon-plus-circle { background-image: url('png/plus-circle.png'); background-repeat: no-repeat; }
 
@@ -82,9 +104,29 @@
 
 .icon-search { background-image: url('png/search.png'); background-repeat: no-repeat; }
 
+.icon-shield { background-image: url('png/shield.png'); background-repeat: no-repeat; }
+
+.icon-sign { background-image: url('png/sign.png'); background-repeat: no-repeat; }
+
+.icon-snowflake { background-image: url('png/snowflake.png'); background-repeat: no-repeat; }
+
+.icon-soundwave { background-image: url('png/soundwave.png'); background-repeat: no-repeat; }
+
+.icon-star-circles { background-image: url('png/star-circles.png'); background-repeat: no-repeat; }
+
+.icon-tag { background-image: url('png/tag.png'); background-repeat: no-repeat; }
+
 .icon-target { background-image: url('png/target.png'); background-repeat: no-repeat; }
 
+.icon-text { background-image: url('png/text.png'); background-repeat: no-repeat; }
+
+.icon-tour { background-image: url('png/tour.png'); background-repeat: no-repeat; }
+
 .icon-twitter { background-image: url('png/twitter.png'); background-repeat: no-repeat; }
+
+.icon-view { background-image: url('png/view.png'); background-repeat: no-repeat; }
+
+.icon-world { background-image: url('png/world.png'); background-repeat: no-repeat; }
 
 .icon-write { background-image: url('png/write.png'); background-repeat: no-repeat; }
 
