@@ -80,6 +80,9 @@
 		.second-column {
 			display: block;
 			clear: both;
+			img {
+				max-width: 100%;
+			}
 		}
 		.second-column {
 			margin-bottom: 25px;
@@ -104,6 +107,11 @@
 		.testimonial {
 			display: block;
 			margin-bottom: 25px;
+			img {
+				float: none;
+				clear: both;
+				height: auto;
+			}
 		}
 	}
 }

@@ -7167,6 +7167,10 @@ header.navbar.navbar-inverse .navbar-phone .phone-number {
     display: block;
     clear: both;
   }
+  .locations-container .location .first-column img,
+  .locations-container .location .second-column img {
+    max-width: 100%;
+  }
   .locations-container .location .second-column {
     margin-bottom: 25px;
   }
@@ -7198,6 +7202,11 @@ header.navbar.navbar-inverse .navbar-phone .phone-number {
   .testimonials-container .testimonial {
     display: block;
     margin-bottom: 25px;
+  }
+  .testimonials-container .testimonial img {
+    float: none;
+    clear: both;
+    height: auto;
   }
 }
 .hentry header .featured-image {
