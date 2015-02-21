@@ -1,5 +1,5 @@
 <div class="row home-intro lighter">
-	<div class="col-xs-6 intro-text">
+	<div class="col-xs-12 col-md-6 intro-text">
 		<?php $site_global_content = get_option( 'option_fields' );
 
 		if ( $site_global_content[ 'tagline' ] != '' ) {
@@ -12,7 +12,7 @@
 		}
 		?>
 	</div>
-	<div class="col-xs-6 intro-slides">
+	<div class="col-xs-12 col-md-6 intro-slides">
 
 		<div id="carousel" class="carousel slide" data-ride="carousel">
 
@@ -43,7 +43,7 @@
 	</div>
 </div>
 <div class="row white content-container" id="home">
-	<div class="col-xs-12">
+	<div class="col-xs-12 col-md-6">
 		<?php the_content(); ?>
 		<?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>
 	</div>

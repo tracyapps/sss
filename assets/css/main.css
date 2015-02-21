@@ -7065,6 +7065,11 @@ header.navbar.navbar-inverse .navbar-phone .phone-number {
   height: 310px;
 }
 
+@media screen and (max-width: 500px) {
+  .home-intro .carousel .item img {
+    height: auto;
+  }
+}
 #home {
   padding-top: 3em;
   padding-bottom: 1.5em;
@@ -7095,6 +7100,31 @@ header.navbar.navbar-inverse .navbar-phone .phone-number {
   min-width: 210px;
 }
 
+@media all and (max-width: 500px) {
+  .services-container {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .services-container .service {
+    min-width: 100px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 auto;
+        -ms-flex: 1 auto;
+            flex: 1 auto;
+  }
+  .services-container .service .icon {
+    width: 90px !important;
+    height: 90px !important;
+  }
+
+  .btn,
+  a.btn {
+    display: block;
+    white-space: normal;
+    width: 100%;
+  }
+}
 .locations-container .location {
   display: -webkit-box;
   display: -webkit-flex;
