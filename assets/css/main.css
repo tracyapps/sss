@@ -7158,6 +7158,19 @@ header.navbar.navbar-inverse .navbar-phone .phone-number {
           order: 2;
 }
 
+@media all and (max-width: 650px) {
+  .locations-container .location {
+    display: block;
+  }
+  .locations-container .location .first-column,
+  .locations-container .location .second-column {
+    display: block;
+    clear: both;
+  }
+  .locations-container .location .second-column {
+    margin-bottom: 25px;
+  }
+}
 .testimonials-container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -7174,7 +7187,19 @@ header.navbar.navbar-inverse .navbar-phone .phone-number {
           flex: 1 0 0;
   padding: 10px 25px;
 }
+.testimonials-container .testimonial img {
+  max-width: 100%;
+}
 
+@media all and (max-width: 500px) {
+  .testimonials-container {
+    display: block;
+  }
+  .testimonials-container .testimonial {
+    display: block;
+    margin-bottom: 25px;
+  }
+}
 .hentry header .featured-image {
   display: block;
   margin: -8px -20px 20px -20px;

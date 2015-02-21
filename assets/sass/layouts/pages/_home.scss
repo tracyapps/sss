@@ -73,6 +73,19 @@
 		}
 	}
 }
+@media all and ( max-width: 650px ) {
+	.locations-container .location {
+		display: block;
+		.first-column,
+		.second-column {
+			display: block;
+			clear: both;
+		}
+		.second-column {
+			margin-bottom: 25px;
+		}
+	}
+}
 
 .testimonials-container {
 	display: flex;
@@ -80,5 +93,17 @@
 	.testimonial {
 		flex: 1 0 0;
 		padding: 10px 25px;
+		img {
+			max-width: 100%;
+		}
+	}
+}
+@media all and ( max-width: 500px ) {
+	.testimonials-container {
+		display: block;
+		.testimonial {
+			display: block;
+			margin-bottom: 25px;
+		}
 	}
 }
