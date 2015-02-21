@@ -43,7 +43,7 @@
 	</div>
 </div>
 <div class="row white content-container" id="home">
-	<div class="col-xs-12 col-md-6">
+	<div class="col-xs-12">
 		<?php the_content(); ?>
 		<?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>
 	</div>
