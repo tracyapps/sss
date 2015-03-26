@@ -8,7 +8,7 @@
  * Please note that missing files will produce a fatal error.
  *
  * @link https://github.com/roots/roots/pull/1042
- */ 
+ */
 $roots_includes = array(
 	'lib/utils.php',           // Utility functions
 	'lib/init.php',            // Initial theme setup and constants
